@@ -3,4 +3,6 @@
 require_relative('../config/env.rb')
 
 
-puts Api
+
+Cli.new.welcome
+
