@@ -39,15 +39,29 @@ class Cli  #this class handles all interaction with the user.... code what the u
             puts "There are about #{new_country.population} living there!"
 
         elsif input == "4"
-            puts "The timezones in #{new_country.name} is #{new_country.timezones}"
+            puts "The timezones in #{new_country.name} is/are #{new_country.timezones}"
 
         else
             input != "1-4" 
             puts "Please choose options 1-4"
+            self.user_country_options(new_country)
         end
-            
+
+        self.more_info(new_country)
 
     end
+
+    def more_info(new_country)
+        puts "Would you like to know more about #{new_country.name} or pick another country?"
+        puts "1. Something else about #{new_country.name}"
+        puts "2. Another country"
+        input = gets.strip
+    end
+
+
+
+
+
 
 
 
