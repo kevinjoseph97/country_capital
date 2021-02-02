@@ -3,8 +3,7 @@ class Cli  #this class handles all interaction with the user.... code what the u
     def welcome
         puts "Welcome to the World Atlas!"
         self.user_selection
-       
-
+    
     end
 
     def user_selection
@@ -15,7 +14,7 @@ class Cli  #this class handles all interaction with the user.... code what the u
     end
 
     def user_country_options(new_country)
-        puts "Thats a cool place, heres the information we can get on it"
+        puts "#{new_country.name}: "
         puts "1. Capital City"
         puts "2. Region of the World"
         puts "3. Population in #{new_country.name} "
@@ -52,25 +51,35 @@ class Cli  #this class handles all interaction with the user.... code what the u
     end
 
     def more_info(new_country)
-        puts "Would you like to know more about #{new_country.name} or pick another country?"
+        puts "Please select your next option"
         puts "1. Something else about #{new_country.name}"
         puts "2. Another country"
+        puts "3. Exit App"
+        self.more_info_other_country(new_country)
+        
+    end
+
+    def more_info_other_country(new_country)
         input = gets.strip
+        if input == "1"
+            user_country_options(new_country)
+        elsif  
+            input == "2"
+            user_selection
+        else
+            input == "3"
+            exit_application
+
+        end
+        binding.pry
+
     end
 
 
-
-
-
-
-
-
-    
-    
+    def exit_application
+        puts "Thanks!"
+        exit
         
-
-
-
-
+    end
 
 end
