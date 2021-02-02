@@ -8,6 +8,9 @@ class Cli  #this class handles all interaction with the user.... code what the u
 
     def user_selection
         puts "Please type in either a country's 2-Letter code or its name you would like to know about."
+        puts "If you want to check out the list of countries and their 2 letter code here's a link:"
+        puts "https://laendercode.net/en/2-letter-list.html"
+        puts "Example: United States of America = US "
         input = gets.strip.capitalize.delete(' ')
         new_country = Api.world_info(input)
         self.user_country_options(new_country)
@@ -71,13 +74,13 @@ class Cli  #this class handles all interaction with the user.... code what the u
             exit_application
 
         end
-        binding.pry
+        
 
     end
 
 
     def exit_application
-        puts "Thanks!"
+        puts "See ya later, Alligator!!"
         exit
         
     end
