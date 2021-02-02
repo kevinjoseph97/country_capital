@@ -3,7 +3,6 @@ class Cli  #this class handles all interaction with the user.... code what the u
     def welcome
         puts "Welcome to the World Atlas!"
         self.user_selection
-    
     end
 
     def user_selection
@@ -25,8 +24,6 @@ class Cli  #this class handles all interaction with the user.... code what the u
         puts " PLEASE SELECT A NUMBER FROM ABOVE"
         #maybe we can use /n to put the above statement
         self.second_level_choice(new_country)
-
-       
     end
 
     def second_level_choice(new_country)
@@ -57,7 +54,7 @@ class Cli  #this class handles all interaction with the user.... code what the u
         puts "Please select your next option"
         puts "1. Something else about #{new_country.name}"
         puts "2. Another country"
-        puts "3. Exit App"
+        puts "To exit app- type: exit"
         self.more_info_other_country(new_country)
         
     end
@@ -69,20 +66,20 @@ class Cli  #this class handles all interaction with the user.... code what the u
         elsif  
             input == "2"
             user_selection
+        elsif input == "exit"
+            self.exit_application
+
         else
-            input == "3"
-            exit_application
-
+            input != "1-2" or "exit"
+            puts "Sorry I didn't get that."
+            self.more_info(new_country)
         end
-        
-
     end
 
 
     def exit_application
         puts "See ya later, Alligator!!"
         exit
-        
     end
 
 end
