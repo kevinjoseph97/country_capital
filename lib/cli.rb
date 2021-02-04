@@ -12,11 +12,19 @@ class Cli  #this class handles all interaction with the user.... code what the u
         puts "Example: United States of America = US "
         input = gets.strip.capitalize.delete(' ')
         new_country = Api.world_info(input)
+        binding.pry
+        # if there error in retrieving proper information, user instructed to try inputing selection again. 
+        if new_country == false
+        
+            puts "wrong input try again"
+            self.user_selection
+        end
+        # if no error, user is prompted to continue
         self.user_country_options(new_country)
     end
 
     def user_country_options(new_country)
-        puts "#{new_country.name}: "
+        puts "You picked #{new_country.name}. WHat would you like to know about it! "
         puts "1. Capital City"
         puts "2. Region of the World"
         puts "3. Population in #{new_country.name} "
