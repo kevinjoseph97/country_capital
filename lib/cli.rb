@@ -1,36 +1,35 @@
 class Cli  #this class handles all interaction with the user.... code what the user has to pick
 
     def welcome
-        puts "Welcome to the World Atlas!"
-        self.user_selection
+        puts "Welcome to the World Atlas!"    
+        self.user_selection #calling the user selection method to begin the process 
     end
 
     def user_selection
-        puts "Please type in either a country's 2-Letter code or its name you would like to know about."
+        puts "Please type in either a country's 2-Letter code OR its name you would like to know about.\n " 
         puts "If you want to check out the list of countries and their 2 letter code here's a link:"
         puts "https://laendercode.net/en/2-letter-list.html"
         puts "Example: United States of America = US "
-        input = gets.strip.capitalize.delete(' ')
+        input = gets.strip
         new_country = Api.world_info(input)
-        binding.pry
+       
         # if there error in retrieving proper information, user instructed to try inputing selection again. 
         if new_country == false
-        
-            puts "wrong input try again"
+            puts "Sorry that was not a valid input, please try again."
             self.user_selection
         end
         # if no error, user is prompted to continue
         self.user_country_options(new_country)
     end
 
+    #given the user's selection and value for new_country, the first level of options are given
     def user_country_options(new_country)
-        puts "You picked #{new_country.name}. WHat would you like to know about it! "
-        puts "1. Capital City"
-        puts "2. Region of the World"
-        puts "3. Population in #{new_country.name} "
-        puts "4. Timezones"
-        puts " PLEASE SELECT A NUMBER FROM ABOVE"
-        #maybe we can use /n to put the above statement
+        puts "You picked #{new_country.name}. WHat would you like to know about it!\n 
+        1. Capital City\n
+        2. Region of the World\n
+        3. Population in #{new_country.name}\n
+        4. Timezones\n
+        PLEASE SELECT A NUMBER FROM ABOVE\n"
         self.second_level_choice(new_country)
     end
 

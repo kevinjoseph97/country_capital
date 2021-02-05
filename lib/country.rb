@@ -16,5 +16,4 @@ class Country
         @@all
     end
 
-
 end
