@@ -14,8 +14,8 @@ class Cli  #this class handles all interaction with the user.... code what the u
         new_country = Api.world_info(input)
        
         # if there error in retrieving proper information, user instructed to try inputing selection again. 
-        if new_country == false
-            puts "Sorry that was not a valid input, please try again.".bold.red.underline
+        if  new_country == false
+            puts "Sorry that was not a valid input, please try again.\n".bold.red.underline
             self.user_selection
         end
         # if no error, user is prompted to continue
@@ -24,28 +24,28 @@ class Cli  #this class handles all interaction with the user.... code what the u
 
     #given the user's selection and value for new_country, the first level of options are given
     def user_country_options(new_country)
-        puts "You picked #{new_country.name}. WHat would you like to know about it?\n.
+        puts "You picked #{new_country.name}. WHat would you like to know about it?\n
         1. Capital City\n
         2. Region of the World\n
         3. Population in #{new_country.name}\n
         4. Timezones\n
-        PLEASE SELECT A NUMBER FROM ABOVE\n".cyan
+        PLEASE SELECT A NUMBER FROM ABOVE\n".green
         self.second_level_choice(new_country)
     end
 
     def second_level_choice(new_country)
         input = gets.strip
         if input == "1"
-            puts "The cpaital of #{new_country.name} is #{new_country.capital}".magenta
+            puts "The cpaital of #{new_country.name} is #{new_country.capital}\n".magenta
             
         elsif input == "2"
-            puts "#{new_country.name} is located in #{new_country.region}.".yellow
+            puts "#{new_country.name} is located in #{new_country.region}.\n".yellow
             
         elsif input == "3"
-            puts "There are about #{new_country.population} living there!".blue
+            puts "There are about #{new_country.population} living there!\n".blue
 
         elsif input == "4"
-            puts "The timezones in #{new_country.name} is/are #{new_country.timezones}".black.on_white
+            puts "The timezones in #{new_country.name} is/are #{new_country.timezones}\n".black.on_white
 
         else
             input != "1-4" 
@@ -58,10 +58,10 @@ class Cli  #this class handles all interaction with the user.... code what the u
     end
 
     def more_info(new_country)
-        puts "Please select your next option".cyan
-        puts "1. Something else about #{new_country.name}".cyan
-        puts "2. Another country".cyan
-        puts "To exit app- type: exit".cyan
+        puts "Please select your next option\n".cyan
+        puts "1. Something else about #{new_country.name}\n".cyan
+        puts "2. Another country\n".cyan
+        puts "To exit app- type: exit\n".cyan
         self.more_info_other_country(new_country)
         
     end
