@@ -20,8 +20,9 @@ Once you have all the gems needed - run "bundle install" in your terminal and fo
 
 Remember to call on these gems in your environment file so they can be accessible throught your application. 
 
-You will then need to call on this environment file insude your run file which is the one to be executed on launch. 
+You will then need to call on this environment file inside your run file which is the one to be executed on launch. 
 
+There will be no tests that are run within this application so we won't have to worry about that. 
 
 
 
