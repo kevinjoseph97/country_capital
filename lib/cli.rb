@@ -11,7 +11,7 @@ class Cli  #this class handles all interaction with the user.... code what the u
         puts "https://laendercode.net/en/2-letter-list.html".white.on_blue
         puts "Example: United States of America = US ".white.on_blue
         input = gets.strip
-        new_country = Api.world_info(input)
+        new_country = Api.world_info(input) 
        
         # if there error in retrieving proper information, user instructed to try inputing selection again. 
         if new_country == false

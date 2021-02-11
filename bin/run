@@ -1,8 +1,9 @@
 #!/usr/bin/env ruby
 
-require_relative('../config/env.rb')
+
+require_relative('../config/env.rb') #so we have access to all files
 
 
 
-Cli.new.welcome
+Cli.new.welcome #cli instance to begin the application
 

@@ -2,18 +2,14 @@ class Country
 
 
     attr_accessor :name, :capital, :region, :population, :timezones
-    @@all = []
+
 
     def initialize(country_attributes)
-        country_attributes.each do |key, value| #its going through all the attributes I called upon in API class
-            self.send("#{key}=", value) #settings the attributes wanted to the response of the api
+        country_attributes.each do |key, value| #going through all the attributes I called upon in API class
+            self.send("#{key}=", value) #settings the attributes wanted to the response of the api.... this is being dynamic
         end
         
-        @@all << self #shoveling all our instaces(object) into the empty @@all array
-    end
-
-    def self.all #call to access the array
-        @@all
+       
     end
 
 end
