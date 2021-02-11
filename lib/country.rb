@@ -9,10 +9,10 @@ class Country
             self.send("#{key}=", value) #settings the attributes wanted to the response of the api
         end
         
-        @@all << self
+        @@all << self #shoveling all our instaces(object) into the empty @@all array
     end
 
-    def self.all
+    def self.all #call to access the array
         @@all
     end
 

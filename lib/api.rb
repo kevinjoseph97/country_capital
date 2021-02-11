@@ -6,6 +6,7 @@ class Api
         @@url = "https://restcountries.eu/rest/v2/name/#{name}?fullText=true"
         response = HTTParty.get(@@url)
        
+       
         # checked to see what the response would have been if invalid choice was entered.
         # if invalid input, returned false to alllow the user to try again.
         if response.code == 404
